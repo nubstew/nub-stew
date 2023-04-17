@@ -1,6 +1,7 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
 import { User } from "./models/User"
+import { Board } from "./models/Board"
 
 //db 연결정보 설정하기
 export const AppDataSource = new DataSource({
@@ -12,7 +13,7 @@ export const AppDataSource = new DataSource({
     database: "nubstew",
     synchronize: true,
     logging: false,
-    entities: [User],
+    entities: [User, Board],
     migrations: [],
     subscribers: [],
 })

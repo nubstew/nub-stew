@@ -6,6 +6,7 @@ import ScrollToTop from './ScrollToTop'
 import logo from 'assets/img/logo.svg';
 import './App.css';
 import MyPage from './pages/MyPage';
+import Board from './pages/Board';
 
 function App() {
   return (
@@ -20,9 +21,8 @@ function App() {
             <p>ㅎㅇ</p>
           </div>
          } />
-        <Route path="/detail" element={ <div>메뉴1임</div> } />
-        <Route path="/about" element={ <div>메뉴2임</div> } />
-        <Route path="/MyPage" element={ <MyPage/> } />
+        <Route path="/board" element={ <Board /> } />
+        <Route path="/MyPage" element={ <MyPage /> } />
         <Route path="*" element={ <div>없는페이지인데요?</div> } />
       </Routes>
       

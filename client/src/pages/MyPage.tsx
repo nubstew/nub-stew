@@ -13,12 +13,13 @@ const MyPage = (): JSX.Element => {
 
   useEffect(() => {
     const instance = axios.create({
-        baseURL: 'http://localhost:80',
+        baseURL: 'http://localhost:3000',
       });
   
       instance
-        .get('/users')
-        .then((response) => setUser(response.data))
+        .get('/api/users')
+        .then((response) => {
+          setUser(response.data[0]); console.log(response)})
         .catch((err) => console.log(err));
   }, []);
 
@@ -30,7 +31,7 @@ const MyPage = (): JSX.Element => {
           <p>Your id is {user.id}.</p>
         </div>
       ) : (
-        <p>Loading...</p>
+        <div>Loading...</div>
       )}
     </div>
   );

@@ -8,14 +8,12 @@ function header() {
         <>
       <Navbar bg="dark" variant="dark">
         <Container>
-        <Link to="/"><Navbar.Brand href="#home">홈입니다</Navbar.Brand></Link>
+        <Navbar.Brand as={Link} to="/">홈입니다</Navbar.Brand>
           <Nav className="me-auto">
-          <Link to="/detail"><Nav.Link href="#1">메뉴1</Nav.Link></Link>
-            <Nav.Link href="#2">메뉴2</Nav.Link>
-            <Link to="/MyPage"><Nav.Link href="#3">메뉴3</Nav.Link></Link>
+            <Nav.Link as={Link} to="/board">게시판</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link href="login">로그인</Nav.Link>
+            <Nav.Link as={Link} to="login">로그인</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
