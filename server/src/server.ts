@@ -10,6 +10,9 @@ import boardRoutes from "./routes/board"
 import { User } from "./models/User"
 import { Board } from "./models/Board"
 import "reflect-metadata"
+require('dotenv').config();
+
+const path = require("path");
 
 
 // AppDataSource.initialize()
@@ -22,7 +25,7 @@ AppDataSource.initialize().then(async () => {
     /** Express 미들웨어 설정 */
     // cors 설정
     const corsOptions = {
-        origin: 'http://localhost:3001', // 요청을 허용할 도메인
+        origin: process.env.HOST_URL, // 요청을 허용할 도메인
     };
     app.use(cors(corsOptions));
     
@@ -37,8 +40,12 @@ AppDataSource.initialize().then(async () => {
     app.use('/api/users', userRoutes);
     app.use('/api/board', boardRoutes);
 
+    app.get("*", (req, res, next) => {
+    res.sendFile(path.join(__dirname, "public", "index.html"));
+    });
+
     // 서버 구동
-    const port : number = 3000;
+    const port : number = parseInt(process.env.SERVER_PORT);
     app.listen(port, function () {
         console.log('Express 서버열렸어요 ' + port);
     });

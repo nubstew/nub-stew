@@ -18,10 +18,10 @@ export const all = async (req:Request, res:Response): Promise<void> => {
 
 export const one = async (req: Request, res: Response): Promise<void> => {
     try {
-        const boardId = parseInt(req.params.boardId)
+        const id = parseInt(req.params.id)
 
         const board = await repository.findOne({
-            where: { boardId }
+            where: { id }
         })
         res.status(200).send(board);
     } catch(err) {

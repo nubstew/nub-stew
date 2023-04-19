@@ -8,10 +8,10 @@ const repository = AppDataSource.getRepository(User)
 
 export const getUser = async (req: Request, res: Response): Promise<void> => {
     try {
-        const userId = parseInt(req.params.userId)
+        const id = parseInt(req.params.id)
 
         const user = await repository.findOne({
-                         where: { userId }
+                         where: { id }
                      })
       res.status(200).send(user);
     } catch (err) {
@@ -56,7 +56,7 @@ export const insertUser = async (req: Request, res: Response) => {
 
 export const deleteUser = async (req: Request, res: Response) => {
     try {
-        const userId = parseInt(req.params.userId)
+        const userId = req.params.userId
 
         // 사용자 아이디로 찾아서
         let userToRemove = await repository.findOneBy({ userId })
