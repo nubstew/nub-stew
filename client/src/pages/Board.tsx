@@ -17,7 +17,7 @@ const Board = (): JSX.Element => {
     //useEffect 컴포넌트 렌더링될때마다 수행해주세요
     useEffect( () => {
         const instance = axios.create({
-            baseURL: 'http://localhost:3000',
+            baseURL: 'http://localhost:5000',
         });
 
         instance.get('/api/board')

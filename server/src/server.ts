@@ -17,6 +17,7 @@ const path = require("path");
 
 // AppDataSource.initialize()
 // DB연결을 먼저 시도해서 초기화해요 성공하면 서버가 구동돼요
+// 연결은 data-source.ts 정보로 시도해요
 AppDataSource.initialize().then(async () => {
 
     // Express 앱 생성

@@ -3,10 +3,10 @@ import { Routes, Route, Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Header } from 'components';
 import ScrollToTop from './ScrollToTop'
-import logo from 'assets/img/logo.svg';
+import logo from './logo.svg';
 import './App.css';
-import MyPage from './pages/MyPage';
-import Board from './pages/Board';
+import MyPage from '../pages/MyPage';
+import Board from '../pages/Board';
 
 function App() {
   return (
